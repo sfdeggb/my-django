@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>News Center</title>
+    <style>
+        /* Add your CSS styles here */
+    </style>
+</head>
+<body>
+    <header>
+        <h1>News Center</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Sports</a></li>
+            <li><a href="#">Politics</a></li>
+            <li><a href="#">Entertainment</a></li>
+        </ul>
+    </nav>
+    <ul>
+        {% for item in news_list%}
+        <li>{{item.news_title}}</li>
+        <li>{{item.news_datetime}}</li>
+        {% endfor %}
+    </ul>
+
+    <section>
+        <h2>Latest News</h2>
+        <article>
+            <h3>News Title</h3>
+            <p>News content goes here...</p>
+        </article>
+
+        <article>
+            <h3>News Title</h3>
+            <p>News content goes here...</p>
+        </article>
+
+        <!-- Add more articles for other news items -->
+
+    </section>
+
+    <footer>
+        <p>&copy; 2022 News Center. All rights reserved.</p>
+    </footer>
+</body>
+</html>

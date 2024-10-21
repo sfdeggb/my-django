@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Information</title>
+    <style>
+    table {
+      width: 100%;
+      border-collapse: collapse; /* 合并边框 */
+      border: 2px solid black; /* 表格边框样式 */
+    }
+    th, td {
+      border: 1px solid black; /* 单元格边框样式 */
+      padding: 8px; /* 单元格内边距 */
+      text-align: left; /* 文本对齐方式 */
+    }
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center;">用户信息</h1>
+    <a href="/info/add/">添加用户</a>
+    <!--<a href="/info/del/?nid=5">删除用户</a>-->
+    <table>
+        <thead>
+            <tr>
+                <th>用户ID</th>
+                <th>用户名</th>
+                <th>密码</th>
+                <th>年龄</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for obj in user_list %}
+            <tr>
+                <td>{{ obj.id }}</td>
+                <td>{{ obj.username }}</td>
+                <td>{{ obj.password }}</td>
+                <td>{{ obj.age }}</td>
+                <td>
+                    <a href="/info/edit/?nid={{ obj.id }}">编辑</a>
+                    <a href="/info/del/?nid={{ obj.id }}">删除</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

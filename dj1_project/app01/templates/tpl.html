@@ -1,0 +1,65 @@
+<!-- 模板语法 负责把数据嵌入到页面中来-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Computer Introduction</title>
+</head>
+<body>
+    <h1>Computer Introduction</h1>
+    <p>Welcome to our website where we introduce a computer.</p>
+    
+    <div>{{ n1 }}</div>
+    <div>{{ n2 }}</div>
+
+    <div>{{ n2.0 }}</div>
+    <div>{{ n2.1 }}</div>
+    <div>{{ n2.2 }}</div>
+    
+    <div>
+        {% for item in n2 %}
+            <span>{{ item }}</span>
+        {% endfor %}
+    </div>
+    <div>{{n3}}</div>
+    <div>{{n3.age}}</div>
+    
+    <!-- 循环-->
+    <ul>
+       {% for k,v in n3.items %}
+            <li>{{ k}} = {{v }}</li>
+        {% endfor %}
+    </ul>
+    <div>{{n4.0}}</div>
+    <div>{{n4.0.name}}</div>
+    <!-- 循环-->
+    {% for item in n4 %}
+        <div>{{item.name}}</div>
+        <div>{{item.age}}</div>
+    {% endfor %}
+    <!--条件-->
+    {% if n1 == "张三" %}
+        <h1>你好 张三</h1>
+    {%else%}
+        <h1>你好 李四</h1>
+    {%endif%}
+
+    <h2>Specifications</h2>
+    <ul>
+        <li>Processor: $PROCESSOR$</li>
+        <li>RAM: $RAM$</li>
+        <li>Storage: $STORAGE$</li>
+        <li>Operating System: $OS$</li>
+    </ul>
+    <h2>Features</h2>
+    <ul>
+        <li>$FEATURE1$</li>
+        <li>$FEATURE2$</li>
+        <li>$FEATURE3$</li>
+    </ul>
+
+    <h2>Price</h2>
+    <p>The price of this computer is $PRICE$.</p>
+</body>
+</html>

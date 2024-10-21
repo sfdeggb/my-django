@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Login</title>
+</head>
+<body>
+    <h1>User Login</h1>
+
+    <form action="/login/" method="POST">
+        
+        {% csrf_token %}
+
+        <label for="用户名">Username:</label>
+        <input type="text" id="username" name="username" required><br><br>
+        
+        <label for="密码">Password:</label>
+        <input type="password" id="password" name="password" required><br><br>
+        
+        <input type="submit" value="提交">
+        <span>{{msg}}</span>
+    </form>
+</body>
+</html>

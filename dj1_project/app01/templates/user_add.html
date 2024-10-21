@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Add Form</title>
+</head>
+<body>
+    <h1>添加用户</h1>
+    <form action="/info/add/" method="POST">
+        {% csrf_token %}
+        <label for="用户名">Username:</label>
+        <input type="text" id="username" name="username" required><br><br>
+        
+        <label for="密码">Password:</label>
+        <input type="password" id="password" name="password" required><br><br>
+
+        <label for="年龄">Age:</label>
+        <input type="text" id="email" name="age" required><br><br>
+        
+        <input type="submit" value="添加用户">
+    </form>
+</body>
+</html>
